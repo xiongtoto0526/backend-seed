@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="./ojdbc6.jar"/>
+
+    <context id="context1" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection connectionURL="jdbc:oracle:thin:@47.92.209.91:1521:xe"
+                        driverClass="oracle.jdbc.driver.OracleDriver" password="123asd" userId="profjshzz"/>
+
+        <!--<javaModelGenerator targetPackage="com.yl.river.model" targetProject="./others">-->
+        <javaModelGenerator targetPackage="com.yl.river.model"
+                            targetProject="../../backend-seed/src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--<sqlMapGenerator targetPackage="mapper" targetProject="./others" />-->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="../../backend-seed/src/main/resources"/>
+
+        <!--<javaClientGenerator targetPackage="com.seasun.management.mapper.dataCenter" targetProject="./others" type="MIXEDMAPPER" />-->
+        <javaClientGenerator targetPackage="com.yl.river.mapper"
+                             targetProject="../../backend-seed/src/main/java" type="MIXEDMAPPER"/>
+        <table schema="PROFJSHZZ" tableName="T_RIVER_BANK" domainObjectName="TRiverBank"
+               enableSelectByExample="false"
+               enableDeleteByExample="false"
+               enableCountByExample="false"
+               enableUpdateByExample="false">
+        </table>
+    </context>
+</generatorConfiguration>
