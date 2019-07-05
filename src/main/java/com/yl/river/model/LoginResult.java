@@ -1,10 +1,9 @@
-package com.yl.river.exception;
+package com.yl.river.model;
 
-import com.yl.river.model.Book;
-
-public class BookException extends RuntimeException {
+public class LoginResult {
 
     private int code;
+    private String user;
     private String message;
 
     public int getCode() {
@@ -15,7 +14,14 @@ public class BookException extends RuntimeException {
         this.code = code;
     }
 
-    @Override
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     public String getMessage() {
         return message;
     }
@@ -23,10 +29,4 @@ public class BookException extends RuntimeException {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    public BookException(int code, String message) {
-        this.code = code;
-        this.message = message;
-    }
-
 }

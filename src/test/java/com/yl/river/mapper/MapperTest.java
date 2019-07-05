@@ -2,7 +2,6 @@ package com.yl.river.mapper;
 
 
 import com.yl.river.Application;
-import com.yl.river.service.BookServiceTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;

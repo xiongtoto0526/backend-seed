@@ -2,14 +2,15 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <classPathEntry location="./ojdbc6.jar"/>
+    <classPathEntry location="./mysql-connector-java-8.0.16.jar"/>
 
     <context id="context1" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
-        <jdbcConnection connectionURL="jdbc:oracle:thin:@47.92.209.91:1521:xe"
-                        driverClass="oracle.jdbc.driver.OracleDriver" password="123asd" userId="profjshzz"/>
+
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/bigs?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+
 
         <!--<javaModelGenerator targetPackage="com.yl.river.model" targetProject="./others">-->
         <javaModelGenerator targetPackage="com.yl.river.model"
@@ -24,11 +25,12 @@
         <!--<javaClientGenerator targetPackage="com.seasun.management.mapper.dataCenter" targetProject="./others" type="MIXEDMAPPER" />-->
         <javaClientGenerator targetPackage="com.yl.river.mapper"
                              targetProject="../../backend-seed/src/main/java" type="MIXEDMAPPER"/>
-        <table schema="PROFJSHZZ" tableName="T_RIVER_BANK" domainObjectName="TRiverBank"
+        <table schema="bigs" tableName="sys_user" domainObjectName="SysUser"
                enableSelectByExample="false"
                enableDeleteByExample="false"
                enableCountByExample="false"
                enableUpdateByExample="false">
+            <generatedKey column="id" identity="true" sqlStatement="Mysql"/>
         </table>
     </context>
 </generatorConfiguration>
